@@ -1,0 +1,7 @@
+server:
+  port: 6543
+  
+app-server:
+  encryption:
+    password: "PBEWithMD5AndDES"
+    algorithm: "PBEWithMD5AndDES"

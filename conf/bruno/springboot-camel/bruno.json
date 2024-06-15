@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "springboot-camel",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
