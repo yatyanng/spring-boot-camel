@@ -2,6 +2,7 @@ server:
   port: 6543
   
 app-server:
+  consult-file: conf/projog/dfprover2.pl
   encryption:
     password: "PBEWithMD5AndDES"
     algorithm: "PBEWithMD5AndDES"
