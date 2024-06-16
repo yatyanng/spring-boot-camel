@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.sb.camel.config.SbRouteBuilder;
+
 @RestController
 @RequestMapping("/encryption")
 public class EncryptionController {
@@ -26,12 +28,12 @@ public class EncryptionController {
 
 	@Autowired
 	@Qualifier("camelContext")
-	CamelContext camelContext;
+	protected CamelContext camelContext;
 
 	@GetMapping(value = { "/encrypt/{text}" })
 	public ResponseEntity<Map<String, String>> encrypt(@PathVariable("text") String text) {
 		String encryptedText = (String) camelContext.createProducerTemplate().sendBodyAndHeaders(
-				"direct:encryptionService", ExchangePattern.InOut, text,
+				SbRouteBuilder.encryptionService, ExchangePattern.InOut, text,
 				Map.of("password", password, "algorithm", algorithm));
 		return new ResponseEntity<>(Map.of("text", text, "encryptedText", encryptedText), HttpStatus.OK);
 	}

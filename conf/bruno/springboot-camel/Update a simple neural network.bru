@@ -1,0 +1,25 @@
+meta {
+  name: Update a simple neural network
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:6543/neuralNet/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "neuralNetId": 1718524123995,
+    "distanceFunction": "EuclideanDistance",
+    "learningFactor": 0.5,
+    "neighbourhoodSize": 2,
+    "features": [
+      0.1,
+      0.2,
+      1.3
+    ]
+  }
+}

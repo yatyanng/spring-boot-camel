@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.example</groupId>
 	<artifactId>springboot-camel</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<name>springboot-camel</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -31,6 +31,19 @@
 			<groupId>org.jasypt</groupId>
 			<artifactId>jasypt</artifactId>
 			<version>${jasypt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>3.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
 	</dependencies>
 

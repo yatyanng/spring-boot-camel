@@ -1,0 +1,25 @@
+meta {
+  name: Create a simple neural network
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:6543/neuralNet/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "featureSize": 3,
+    "neurons": [
+      [0.2, 0.3, 1.0],
+      [1.0, 0.91, 0.0],
+      [2.0, 0.1, 0.1]
+    ],
+    "links": [
+      [0,1], [1,2]
+    ]
+  }
+}
