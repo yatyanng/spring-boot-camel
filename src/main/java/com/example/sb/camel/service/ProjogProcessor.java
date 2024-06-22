@@ -68,12 +68,14 @@ public class ProjogProcessor implements Processor {
 				Projog projog = createProjog(requestBody);
 				String facts = String.join("\n",
 						(List<String>) requestBody.get(CamelConstantEnum.CONST_FACTS.toString()));
+				logger.info("facts: {}", facts);
 				projog.consultReader(new StringReader(facts));
 				projogCache.put(uuid, projog);
 			}
 		} else {
 			Projog projog = createProjog(requestBody);
 			String facts = String.join("\n", (List<String>) requestBody.get(CamelConstantEnum.CONST_FACTS.toString()));
+			logger.info("facts: {}", facts);
 			projog.consultReader(new StringReader(facts));
 			projogCache.put(uuid, projog);
 		}

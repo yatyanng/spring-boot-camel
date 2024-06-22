@@ -1,0 +1,27 @@
+meta {
+  name: Test projog 2
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:6543/projog/query
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "variables": ["X"],
+    "facts": ["knows(john,mary).",
+             "knows(susan,helen).",
+              "knows(katie,helen).",
+             "knows(helen,peter).",
+             "knows(alice,katie).",
+             "knows(bob,alice).",
+              "knows(mary,katie).",
+             "mightKnow(X,Y):-knows(Y,X).",
+             "mightKnow(X,Y):-knows(Y,A), knows(A,X)."],
+    "query" : "mightKnow(X,john)."
+  }
+}
