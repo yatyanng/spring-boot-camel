@@ -12,18 +12,14 @@ post {
 
 body:json {
   {
-    "uuid": "43d86ea3-acfe-4079-bb4d-16eb3176a8df",
-    "variables": ["X","Y"],
-    "facts": [
-      "test(a,1).",
-      "test(b,2).",
-      "test(c,3).",
-      "test(d,4).",
-      "test(e,5).",
-      "test(f,6).",
-      "test(g,7).",
-      "test(h,8)."
+    "variables": ["X"],
+    "facts": [],
+    "predicates": [
+      {
+        "name": "split", "args" : 2,
+        "factory": "com.example.sb.camel.projog.RetryablePredicateFactory"
+      }
     ],
-    "query" : "test(X, Y)."
+    "query" : "split('dog,cat,bird', X)."
   }
 }

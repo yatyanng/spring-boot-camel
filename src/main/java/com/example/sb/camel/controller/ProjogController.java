@@ -25,9 +25,11 @@ public class ProjogController {
 
 	@SuppressWarnings("unchecked")
 	@PostMapping(value = { "/query" })
-	public ResponseEntity<Map<String, Object>> query(@RequestBody Map<String, Object> requestBody) {
-		Map<String, Object> payload = (Map<String, Object>) camelContext.createProducerTemplate()
-				.sendBody(SbRouteBuilder.projogService, ExchangePattern.InOut, requestBody);
+	public ResponseEntity<Map<String, Object>> query(
+			@RequestBody Map<String, Object> requestBody) {
+
+		Map<String, Object> payload = (Map<String, Object>) camelContext.createProducerTemplate().sendBody(
+				SbRouteBuilder.projogService, ExchangePattern.InOut, requestBody);
 
 		return new ResponseEntity<>(payload, HttpStatus.OK);
 	}

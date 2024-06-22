@@ -1,0 +1,1 @@
+pj_add_predicate(split/2, 'com.example.sb.camel.projog.RetryablePredicateFactory').

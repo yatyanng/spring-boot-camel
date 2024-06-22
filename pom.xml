@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.example</groupId>
 	<artifactId>springboot-camel</artifactId>
-	<version>1.2.0</version>
+	<version>1.3.0</version>
 	<name>springboot-camel</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
